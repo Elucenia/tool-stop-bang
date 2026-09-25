@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Mulher jovem que ronca: 2 pontos, baixo risco",
+    "input": {
+      "s": true,
+      "t": true
+    },
+    "expected": {
+      "score": 2,
+      "level": "low"
+    },
+    "originalInput": {
+      "s": true,
+      "t": true
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "Homem de 55 anos, hipertenso que ronca: 4 pontos",
+    "input": {
+      "s": true,
+      "p": true,
+      "a": true,
+      "g": true
+    },
+    "expected": {
+      "score": 4,
+      "level": "mid"
+    },
+    "originalInput": {
+      "s": true,
+      "p": true,
+      "a": true,
+      "g": true
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "Homem obeso, pescoço 44 cm, ronco e apneia observada: 6 pontos",
+    "input": {
+      "s": true,
+      "o": true,
+      "b": true,
+      "a": true,
+      "n": true,
+      "g": true
+    },
+    "expected": {
+      "score": 6,
+      "level": "high"
+    },
+    "originalInput": {
+      "s": true,
+      "o": true,
+      "b": true,
+      "a": true,
+      "n": true,
+      "g": true
+    },
+    "expandedZeroOptions": []
+  }
+]

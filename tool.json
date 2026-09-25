@@ -1,0 +1,280 @@
+{
+  "tool": {
+    "id": "stop-bang",
+    "title": "STOP-Bang",
+    "short": "Rastreio de apneia obstrutiva do sono",
+    "desc": "Questionário STOP-Bang para rastrear apneia obstrutiva do sono no pré-operatório: ronco, cansaço, apneia observada, pressão, IMC, idade, pescoço e sexo.",
+    "lead": "Rastreia apneia obstrutiva do sono moderada a grave com oito perguntas de sim ou não, sobretudo na avaliação pré-anestésica.",
+    "spec": [
+      "anestesiologia",
+      "pneumologia",
+      "otorrinolaringologia",
+      "clinica-medica",
+      "neurologia"
+    ],
+    "tier": 1,
+    "fields": [
+      [
+        "s",
+        "<strong>S</strong>noring: ronca alto (alto o bastante para ser ouvido com a porta fechada)?",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "t",
+        "<strong>T</strong>ired: sente-se cansado ou sonolento durante o dia com frequência?",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "o",
+        "<strong>O</strong>bserved: alguém já observou pausas na respiração durante o sono?",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "p",
+        "<strong>P</strong>ressure: tem ou trata pressão alta?",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "b",
+        "<strong>B</strong>MI: IMC acima de 35 kg/m²",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "a",
+        "<strong>A</strong>ge: idade acima de 50 anos",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "n",
+        "<strong>N</strong>eck: circunferência do pescoço acima de 40 cm",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "g",
+        "<strong>G</strong>ender: sexo masculino",
+        "chk",
+        {
+          "pts": 1
+        }
+      ]
+    ],
+    "score": {
+      "label": "STOP-Bang",
+      "unit": "de 8",
+      "bands": [
+        [
+          0,
+          "low",
+          "Baixo risco de apneia obstrutiva moderada a grave",
+          ""
+        ],
+        [
+          3,
+          "mid",
+          "Risco intermediário de apneia obstrutiva",
+          "Com 2 ou mais itens do STOP associados a sexo masculino, IMC &gt; 35 ou pescoço &gt; 40 cm, o paciente passa a alto risco."
+        ],
+        [
+          5,
+          "high",
+          "Alto risco de apneia obstrutiva moderada a grave",
+          "Planeje via aérea difícil, reduza opioides e sedativos e monitore a oximetria no pós-operatório."
+        ]
+      ]
+    },
+    "formula": "<p>Um ponto para cada resposta \"sim\" (0 a 8).</p>",
+    "table": [
+      [
+        "Pontos",
+        "Risco de apneia obstrutiva moderada a grave (Chung, 2016)"
+      ],
+      [
+        "0 a 2",
+        "Baixo"
+      ],
+      [
+        "3 a 4",
+        "Intermediário"
+      ],
+      [
+        "5 a 8",
+        "Alto (ou 2+ itens do STOP com sexo masculino, IMC &gt; 35 ou pescoço &gt; 40 cm)"
+      ]
+    ],
+    "tips": [
+      "Com 3 ou mais pontos, a sensibilidade para apneia moderada a grave é alta (acima de 90% na validação), mas a especificidade é baixa: o escore rastreia, não diagnostica.",
+      "Pacientes de alto risco têm mais via aérea difícil, dessaturação e complicações cardiopulmonares no pós-operatório: prefira analgesia multimodal poupadora de opioide e monitorização contínua de oximetria.",
+      "Se o paciente já usa CPAP, oriente trazer o aparelho e usá-lo na recuperação anestésica.",
+      "Bicarbonato sérico ≥ 28 mEq/L em paciente com STOP-Bang ≥ 3 aumenta a especificidade para apneia moderada a grave."
+    ],
+    "sources": [
+      [
+        "Chung F et al. STOP questionnaire: a tool to screen patients for obstructive sleep apnea. Anesthesiology, 2008.",
+        "https://doi.org/10.1097/ALN.0b013e31816d83e4"
+      ],
+      [
+        "Chung F, Abdullah HR, Liao P. STOP-Bang questionnaire: a practical approach to screen for obstructive sleep apnea. Chest, 2016.",
+        "https://doi.org/10.1378/chest.15-0903"
+      ]
+    ],
+    "cases": [
+      [
+        "Mulher jovem que ronca: 2 pontos, baixo risco",
+        {
+          "s": true,
+          "t": true
+        },
+        {
+          "score": 2,
+          "level": "low"
+        }
+      ],
+      [
+        "Homem de 55 anos, hipertenso que ronca: 4 pontos",
+        {
+          "s": true,
+          "p": true,
+          "a": true,
+          "g": true
+        },
+        {
+          "score": 4,
+          "level": "mid"
+        }
+      ],
+      [
+        "Homem obeso, pescoço 44 cm, ronco e apneia observada: 6 pontos",
+        {
+          "s": true,
+          "o": true,
+          "b": true,
+          "a": true,
+          "n": true,
+          "g": true
+        },
+        {
+          "score": 6,
+          "level": "high"
+        }
+      ]
+    ],
+    "batch": "urgencia",
+    "kind": "Escore",
+    "config": {
+      "unit": "de 8",
+      "label": "STOP-Bang",
+      "fields": [
+        [
+          "s",
+          "chk",
+          1
+        ],
+        [
+          "t",
+          "chk",
+          1
+        ],
+        [
+          "o",
+          "chk",
+          1
+        ],
+        [
+          "p",
+          "chk",
+          1
+        ],
+        [
+          "b",
+          "chk",
+          1
+        ],
+        [
+          "a",
+          "chk",
+          1
+        ],
+        [
+          "n",
+          "chk",
+          1
+        ],
+        [
+          "g",
+          "chk",
+          1
+        ]
+      ],
+      "bands": [
+        [
+          0,
+          "low",
+          "Baixo risco de apneia obstrutiva moderada a grave",
+          ""
+        ],
+        [
+          3,
+          "mid",
+          "Risco intermediário de apneia obstrutiva",
+          "Com 2 ou mais itens do STOP associados a sexo masculino, IMC &gt; 35 ou pescoço &gt; 40 cm, o paciente passa a alto risco."
+        ],
+        [
+          5,
+          "high",
+          "Alto risco de apneia obstrutiva moderada a grave",
+          "Planeje via aérea difícil, reduza opioides e sedativos e monitore a oximetria no pós-operatório."
+        ]
+      ]
+    },
+    "areaId": "urgencia",
+    "clinicalReview": "pending",
+    "sourceReview": "pending",
+    "sourceFile": "app/content/ferramentas/urgencia.php",
+    "arithmeticTest": {
+      "status": "passed",
+      "testedAt": "2026-09-25",
+      "total": 3,
+      "passed": 3,
+      "failures": []
+    },
+    "independentArithmeticTest": {
+      "status": "not-tested",
+      "testedAt": null,
+      "total": 0,
+      "passed": 0,
+      "cases": []
+    }
+  },
+  "review": {
+    "status": "needs-review",
+    "reason": "Revisão documental e clínica independente pendente.",
+    "clinicalValidation": "not-performed"
+  },
+  "sourceFile": {
+    "path": "app/content/ferramentas/urgencia.php",
+    "sha256": "b24f3a77383430c3f3463168e78e88341034b3108bd712f3613ae32672dc281c",
+    "bytes": 121059
+  },
+  "clinicalValidation": "not-performed"
+}
