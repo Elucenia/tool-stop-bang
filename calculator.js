@@ -1,9 +1,11 @@
-/* ELUCENIA standalone integration. Source package metadata and rights: README.md. */
+/* tool-stop-bang · Elucenia · https://github.com/Elucenia/tool-stop-bang
+   Copyright (c) 2026 Elucenia · Felipe Guedes (fgxdev.com). Licensed under the Apache License 2.0: keep this notice and the NOTICE file, and mark your changes.
+   Standalone integration. Package metadata and rights: README.md. */
 (function(root){'use strict';
 function freeze(value){if(value&&typeof value==='object'){for(const item of Object.values(value))freeze(item);Object.freeze(value);}return value;}
 const TOOL=freeze({"id":"stop-bang","title":"STOP-Bang","fields":[["s","<strong>S</strong>noring: ronca alto (alto o bastante para ser ouvido com a porta fechada)?","chk",{"pts":1}],["t","<strong>T</strong>ired: sente-se cansado ou sonolento durante o dia com frequência?","chk",{"pts":1}],["o","<strong>O</strong>bserved: alguém já observou pausas na respiração durante o sono?","chk",{"pts":1}],["p","<strong>P</strong>ressure: tem ou trata pressão alta?","chk",{"pts":1}],["b","<strong>B</strong>MI: IMC acima de 35 kg/m²","chk",{"pts":1}],["a","<strong>A</strong>ge: idade acima de 50 anos","chk",{"pts":1}],["n","<strong>N</strong>eck: circunferência do pescoço acima de 40 cm","chk",{"pts":1}],["g","<strong>G</strong>ender: sexo masculino","chk",{"pts":1}]],"config":{"unit":"de 8","label":"STOP-Bang","fields":[["s","chk",1],["t","chk",1],["o","chk",1],["p","chk",1],["b","chk",1],["a","chk",1],["n","chk",1],["g","chk",1]],"bands":[[0,"low","Baixo risco de apneia obstrutiva moderada a grave",""],[3,"mid","Risco intermediário de apneia obstrutiva","Com 2 ou mais itens do STOP associados a sexo masculino, IMC &gt; 35 ou pescoço &gt; 40 cm, o paciente passa a alto risco."],[5,"high","Alto risco de apneia obstrutiva moderada a grave","Planeje via aérea difícil, reduza opioides e sedativos e monitore a oximetria no pós-operatório."]]},"reviewStatus":"needs-review","clinicalValidation":"not-performed"});
 const window={};
-/* ELUCENIA arithmetic registry. No DOM access, storage, telemetry or network requests. */
+/* Elucenia arithmetic registry. No DOM access, storage, telemetry or network requests. */
 (function(root){
   'use strict';
   const CALC={fn:Object.create(null)};
